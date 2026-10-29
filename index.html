@@ -4,146 +4,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HorlaJumm's professional portfolio featuring virtual assistance, web development, digital marketing, and creative projects.">
-  <meta name="theme-color" content="#5b4bdb">
-  <title>HorlaJumm | Professional Portfolio</title>
+  <meta name="theme-color" content="#17152b">
+
+  <meta name="description" content="HorlaJumm's professional portfolio showcasing virtual assistance, web development, and digital marketing projects.">
+
+  <title>HorlaJumm | Virtual Assistant, Web Developer & Digital Marketer</title>
 
   <style>
     :root {
-      --bg: #f7f8fc;
-      --surface: #ffffff;
-      --ink: #172033;
-      --muted: #667085;
-      --primary: #5b4bdb;
-      --primary-dark: #4335b8;
-      --accent: #18a999;
-      --line: #e7e9f2;
-      --shadow: 0 18px 55px rgba(31, 41, 90, .09);
-      --radius: 22px;
+      --bg: #111020;
+      --surface: #1c1a32;
+      --surface-light: #252240;
+      --purple: #a78bfa;
+      --teal: #5eead4;
+      --text: #f5f3ff;
+      --muted: #c1bdd8;
+      --border: rgba(255,255,255,.12);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 85px;
     }
 
     body {
-      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
 
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--accent);
+    a:hover {
+      color: var(--purple);
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--teal);
       outline-offset: 4px;
     }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
-      margin: 0 auto;
+      width: min(1080px, 90%);
+      margin: auto;
     }
 
-    .topbar {
+    header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 248, 252, .94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(231, 233, 242, .85);
+      z-index: 100;
+      background: rgba(17,16,32,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 74px;
+      min-height: 72px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
-    .brand {
-      font-weight: 850;
-      letter-spacing: -.04em;
-      font-size: 1.25rem;
+    .logo {
+      color: var(--text);
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
     }
 
-    .brand span { color: var(--primary); }
+    .logo span {
+      color: var(--teal);
+    }
 
-    .navlinks {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
-      font-size: .92rem;
-      color: #4b5568;
+      gap: 22px;
     }
 
-    .navlinks a:hover { color: var(--primary); }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
 
     .menu-toggle {
       display: none;
-      border: 1px solid var(--line);
+      color: var(--text);
       background: var(--surface);
-      padding: 9px 12px;
-      border-radius: 10px;
-      color: var(--ink);
-      font: inherit;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 1.1rem;
       cursor: pointer;
     }
 
-    .hero {
-      padding: 86px 0 70px;
-      overflow: hidden;
+    section {
+      padding: 76px 0;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
+    .hero {
+      min-height: 520px;
+      display: flex;
       align-items: center;
-      gap: 55px;
+      background:
+        radial-gradient(ellipse at 90% 15%, rgba(167,139,250,.16), transparent 40%),
+        radial-gradient(ellipse at 5% 85%, rgba(94,234,212,.10), transparent 40%);
+    }
+
+    .hero-content {
+      max-width: 790px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--primary);
-      background: #eeecff;
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: .82rem;
-      font-weight: 750;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: 700;
     }
 
     h1 {
-      font-size: clamp(2.7rem, 6vw, 4.8rem);
-      line-height: 1.06;
-      letter-spacing: -.065em;
-      margin: 22px 0;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.12;
+      margin: 18px 0;
+      letter-spacing: -2px;
     }
 
-    h1 span { color: var(--primary); }
+    h1 span {
+      color: var(--purple);
+    }
+
+    .hero p,
+    .section-intro {
+      color: var(--muted);
+      max-width: 720px;
+    }
 
     .hero p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 620px;
+      font-size: 1.08rem;
     }
 
-    .actions {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -154,393 +175,288 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
+      gap: 8px;
       padding: 12px 19px;
-      border-radius: 12px;
-      font-weight: 750;
-      border: 1px solid transparent;
-      transition: .2s ease;
-      cursor: pointer;
+      border: 1px solid var(--teal);
+      border-radius: 9px;
+      background: var(--teal);
+      color: #111020;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
     }
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 8px 20px rgba(91, 75, 219, .2);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
+    .btn:hover {
+      color: #111020;
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      border-color: var(--line);
-      background: white;
+    .btn.secondary {
+      background: transparent;
+      color: var(--teal);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+    .btn.secondary:hover {
+      background: rgba(94,234,212,.1);
     }
-
-    .hero-card {
-      background: linear-gradient(145deg, #29245f, #5b4bdb 70%, #786cf0);
-      min-height: 360px;
-      border-radius: 30px;
-      padding: 28px;
-      color: white;
-      box-shadow: 0 28px 70px rgba(64, 51, 174, .25);
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .hero-card::before,
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, .2);
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .hero-card::before {
-      width: 280px;
-      height: 280px;
-      right: -95px;
-      top: -75px;
-    }
-
-    .hero-card::after {
-      width: 210px;
-      height: 210px;
-      right: -60px;
-      top: -40px;
-    }
-
-    .avatar {
-      display: grid;
-      place-items: center;
-      width: 86px;
-      height: 86px;
-      border-radius: 25px;
-      background: rgba(255, 255, 255, .16);
-      border: 1px solid rgba(255, 255, 255, .25);
-      font-size: 2rem;
-      font-weight: 850;
-    }
-
-    .hero-card h2 {
-      font-size: 1.6rem;
-      margin: 24px 0 4px;
-    }
-
-    .hero-card p {
-      color: rgba(255, 255, 255, .8);
-      font-size: .98rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .chip {
-      font-size: .78rem;
-      padding: 6px 10px;
-      border: 1px solid rgba(255, 255, 255, .28);
-      border-radius: 999px;
-      color: white;
-      background: rgba(255, 255, 255, .08);
-    }
-
-    section { padding: 68px 0; }
 
     .section-heading {
-      max-width: 660px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+      letter-spacing: -.7px;
+    }
+
+    .section-heading span {
+      color: var(--teal);
+    }
+
+    .section-intro {
       margin-bottom: 30px;
     }
 
-    .kicker {
-      color: var(--primary);
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 850;
-    }
-
-    h2.section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -.05em;
-      line-height: 1.15;
-      margin: 8px 0 12px;
-    }
-
-    .section-heading p,
-    .muted { color: var(--muted); }
-
-    .about-grid {
+    .about-grid,
+    .card-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .panel {
+    .card {
+      min-width: 0;
+      padding: 25px;
       background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      transition: transform .2s, border-color .2s;
     }
 
-    .about-note {
-      background: #eeecff;
-      border: 1px solid #e0dcff;
-      border-radius: var(--radius);
-      padding: 28px;
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(94,234,212,.45);
     }
 
-    .about-note strong {
-      color: var(--primary-dark);
-      font-size: 1.12rem;
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
     }
 
-    .stats {
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .card ul {
+      padding-left: 19px;
+      margin-top: 10px;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .stat {
-      padding: 16px;
-      border-radius: 14px;
-      background: white;
-      border: 1px solid #e4e0ff;
-    }
-
-    .stat b { display: block; font-size: 1.1rem; }
-    .stat span { color: var(--muted); font-size: .82rem; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .service-card,
-    .project-card {
+    .service-card {
+      padding: 22px;
       background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 19px;
-      padding: 24px;
-      transition: .2s ease;
-    }
-
-    .service-card:hover,
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: #d4cffd;
-    }
-
-    .icon-box {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
+      border: 1px solid var(--border);
       border-radius: 14px;
-      background: #eeecff;
-      color: var(--primary);
-      font-size: 1.3rem;
-      margin-bottom: 16px;
     }
 
-    .service-card h3,
-    .project-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
     }
 
-    .service-card p,
-    .project-card p {
-      margin: 0;
+    .service-card p {
       color: var(--muted);
-      font-size: .93rem;
+      font-size: .92rem;
     }
 
-    .skills-wrap {
+    .skill-group {
+      margin-top: 24px;
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .skill {
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 12px;
-      padding: 10px 14px;
+    .tag {
+      padding: 7px 12px;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--muted);
       font-size: .9rem;
-      font-weight: 650;
     }
 
-    .skill:hover {
-      color: var(--primary);
-      border-color: #c9c2ff;
+    .tag.highlight {
+      color: var(--teal);
+      border-color: rgba(94,234,212,.35);
     }
 
     .project-card {
       display: flex;
       flex-direction: column;
-      min-height: 245px;
+      gap: 12px;
     }
 
-    .project-tag {
-      color: var(--primary);
-      font-size: .75rem;
+    .project-card .project-type {
+      color: var(--teal);
       text-transform: uppercase;
-      font-weight: 850;
-      letter-spacing: .1em;
-      margin-bottom: 10px;
+      font-size: .76rem;
+      letter-spacing: 1.3px;
+      font-weight: 700;
     }
 
-    .project-card p {
-      flex: 1;
-      margin-bottom: 18px;
+    .project-card .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: auto;
+      padding-top: 8px;
     }
 
-    .project-link {
-      color: var(--primary);
+    .project-links a {
+      font-weight: 700;
       font-size: .9rem;
-      font-weight: 750;
     }
 
-    .contact-panel {
-      background: linear-gradient(135deg, #242052, #5142ce);
-      color: white;
-      border-radius: 28px;
-      padding: clamp(28px, 5vw, 55px);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 25px;
+    .status {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 9px;
+      border: 1px solid rgba(167,139,250,.4);
+      border-radius: 20px;
+      color: var(--purple);
+      font-size: .78rem;
     }
 
-    .contact-panel p {
-      color: rgba(255, 255, 255, .82);
-      max-width: 600px;
+    .contact-box {
+      padding: 32px;
+      background: linear-gradient(
+        130deg,
+        rgba(167,139,250,.12),
+        rgba(94,234,212,.08)
+      );
+      border: 1px solid var(--border);
+      border-radius: 16px;
     }
 
-    .contact-panel .kicker { color: #c9c3ff; }
+    .contact-box p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
 
-    .contact-panel .btn {
-      background: white;
-      color: var(--primary-dark);
-      white-space: nowrap;
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
     }
 
     footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: .88rem;
+      text-align: center;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
+    .back-top {
+      display: inline-block;
+      margin-top: 8px;
     }
 
-    .social-links { display: flex; gap: 16px; }
-    .social-links a:hover { color: var(--primary); }
-
-    @media (max-width: 800px) {
-      .hero { padding-top: 55px; }
-
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-block;
       }
 
-      .hero-card { min-height: 300px; }
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .contact-panel { grid-template-columns: 1fr; }
-      .navlinks { gap: 15px; }
-    }
-
-    @media (max-width: 560px) {
-      .container { width: calc(100% - 28px); }
-
-      nav {
-        min-height: 66px;
-        flex-wrap: wrap;
-      }
-
-      .menu-toggle { display: inline-flex; }
-
-      .navlinks {
+      .nav-links {
         display: none;
-        width: 100%;
-        padding: 0 0 16px;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        gap: 16px;
       }
 
-      .navlinks.open { display: flex; }
+      .nav-links.open {
+        display: flex;
+      }
 
-      .hero { padding: 42px 0 48px; }
+      .about-grid,
+      .card-grid,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
 
-      h1 { font-size: clamp(2.55rem, 13vw, 3.7rem); }
+      section {
+        padding: 58px 0;
+      }
 
-      section { padding: 48px 0; }
-      .cards { grid-template-columns: 1fr; }
+      .hero {
+        min-height: 470px;
+      }
 
-      .panel,
-      .about-note { padding: 22px; }
+      h1 {
+        letter-spacing: -1px;
+      }
 
-      .hero-card { padding: 23px; }
-
-      .actions .btn { width: 100%; }
+      .contact-box {
+        padding: 23px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      html {
+        scroll-behavior: auto;
+      }
 
-      *,
-      *::before,
-      *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+      *, *::before, *::after {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
+  <header>
     <nav class="container" aria-label="Main navigation">
-      <a class="brand" href="#home">Horla<span>Jumm.</span></a>
+      <a class="logo" href="#home">Horla<span>Jumm</span></a>
 
       <button
         class="menu-toggle"
         id="menuToggle"
-        type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="navLinks"
-        aria-label="Toggle navigation menu">
-        Menu ☰
-      </button>
+      >☰</button>
 
-      <div class="navlinks" id="navLinks">
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">What I Do</a>
         <a href="#skills">Skills</a>
@@ -551,274 +467,307 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Open to learning and opportunities</div>
+      <div class="container hero-content">
+        <div class="eyebrow">Welcome to my portfolio</div>
 
-          <h1>Creative thinking.<br>
-            <span>Practical solutions.</span>
-          </h1>
+        <h1>
+          Hi, I'm <span>HorlaJumm.</span><br>
+          I turn ideas into digital work.
+        </h1>
 
-          <p>
-            Hi, I'm <strong>HorlaJumm</strong> — a multi-skilled digital
-            professional interested in virtual assistance, web development,
-            digital marketing, and creative digital projects. I enjoy turning
-            ideas into useful, well-presented experiences.
-          </p>
+        <p>
+          I'm a Computer Science graduate interested in web development,
+          virtual assistance, and digital marketing. I use technology,
+          organized information, and digital communication to support
+          projects and small businesses.
+        </p>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
-            <a class="btn btn-secondary" href="#contact">Let's Connect</a>
-          </div>
+        <div class="buttons">
+          <a class="btn" href="#projects">Explore My Work</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
+          <a
+            class="btn secondary"
+            href="Adebisi_Jumoke_Zainab_Digital_Marketing_CV.pdf"
+            download
+          >Download My CV</a>
         </div>
-
-        <aside class="hero-card" aria-label="Portfolio introduction card">
-          <div class="avatar" aria-label="HorlaJumm initials">HJ</div>
-          <h2>Digital skills, one portfolio.</h2>
-          <p>
-            A growing collection of projects, services, and skills across
-            technology and digital work.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Virtual Assistance</span>
-            <span class="chip">Web Development</span>
-            <span class="chip">Digital Marketing</span>
-            <span class="chip">Creative Content</span>
-          </div>
-        </aside>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <div class="container">
-        <div class="section-heading">
-          <div class="kicker">A little about me</div>
-          <h2 class="section-title">Curious, adaptable, and ready to create.</h2>
-          <p>
-            I bring together organization, technology, communication, and
-            creativity to support projects and solve everyday digital challenges.
-          </p>
-        </div>
+        <h2 class="section-heading">About <span>Me</span></h2>
+
+        <p class="section-intro">
+          I'm a Computer Science graduate building practical experience
+          through personal projects and small-business activities. My
+          interests combine technology, administration, and online promotion.
+        </p>
 
         <div class="about-grid">
-          <div class="about-note">
-            <strong>My approach</strong>
+          <article class="card">
+            <div class="icon" aria-hidden="true">💻</div>
+            <h3>Technology</h3>
             <p>
-              I value clear communication, thoughtful design, continuous
-              learning, and work that makes things easier for people.
+              I work with HTML and CSS for websites, and Python and SQLite
+              for my ongoing software project. I also use GitHub to present
+              my work online.
             </p>
+          </article>
 
-            <div class="stats">
-              <div class="stat"><b>Organized</b><span>Planning and support</span></div>
-              <div class="stat"><b>Creative</b><span>Ideas and content</span></div>
-              <div class="stat"><b>Curious</b><span>Learning by building</span></div>
-              <div class="stat"><b>Digital-first</b><span>Tools and technology</span></div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>What I'm building toward</h3>
-            <p class="muted">
-              My portfolio brings together practical digital skills and projects.
-              I'm interested in helping individuals and businesses stay organized,
-              improve their online presence, and bring useful ideas to life.
+          <article class="card">
+            <div class="icon" aria-hidden="true">📣</div>
+            <h3>Business and Digital Support</h3>
+            <p>
+              Through Zesty Ponmo & Tinko Hub, I have practical experience
+              sharing product information, promoting products on Facebook
+              and WhatsApp, and communicating with prospective customers.
             </p>
-            <p class="muted">
-              This site will grow as I add completed projects, examples of my
-              work, and new skills. I'll update project descriptions with live
-              links and screenshots as more work becomes available.
-            </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services">
       <div class="container">
-        <div class="section-heading">
-          <div class="kicker">What I do</div>
-          <h2 class="section-title">Ways I can contribute.</h2>
-          <p>
-            Areas of interest and service that can grow with my experience and portfolio.
-          </p>
-        </div>
+        <h2 class="section-heading">What I <span>Do</span></h2>
 
-        <div class="cards">
+        <p class="section-intro">
+          Areas where I am building and applying my practical skills.
+        </p>
+
+        <div class="service-grid">
           <article class="service-card">
-            <div class="icon-box" aria-hidden="true">✦</div>
+            <div class="icon" aria-hidden="true">🗂️</div>
             <h3>Virtual Assistance</h3>
             <p>
-              Administrative support, online research, data entry, document
-              organization, and helping daily tasks run smoothly.
+              Online research, data entry, and organizing information
+              to support business tasks.
             </p>
           </article>
 
           <article class="service-card">
-            <div class="icon-box" aria-hidden="true">⌘</div>
+            <div class="icon" aria-hidden="true">🌐</div>
             <h3>Web Development</h3>
             <p>
-              Building and improving responsive web pages with HTML and CSS,
-              with an interest in Python-backed projects.
+              Building and styling websites with HTML and CSS, while
+              developing programming and database skills through personal
+              projects.
             </p>
           </article>
 
           <article class="service-card">
-            <div class="icon-box" aria-hidden="true">↗</div>
+            <div class="icon" aria-hidden="true">📱</div>
             <h3>Digital Marketing</h3>
             <p>
-              Social media content planning, brand communication, promotional
-              ideas, and learning how digital campaigns work.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon-box" aria-hidden="true">✎</div>
-            <h3>Content &amp; Design</h3>
-            <p>
-              Creating clear digital content, promotional materials, and
-              visual ideas for online audiences.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon-box" aria-hidden="true">▤</div>
-            <h3>Research &amp; Organization</h3>
-            <p>
-              Gathering information, structuring documents, organizing details,
-              and presenting information clearly.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon-box" aria-hidden="true">◎</div>
-            <h3>Small Business Support</h3>
-            <p>
-              Digital support for product presentation, customer communication,
-              and an organized online presence.
+              Product promotion, business communication, product
+              presentation, and social media content support using
+              Facebook, WhatsApp, and Canva.
             </p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills">
       <div class="container">
-        <div class="section-heading">
-          <div class="kicker">Skills &amp; tools</div>
-          <h2 class="section-title">A flexible digital toolkit.</h2>
-          <p>
-            These are areas I work with, am developing, or use in my projects.
-            I can refine this list as my experience grows.
-          </p>
+        <h2 class="section-heading">Skills &amp; <span>Tools</span></h2>
+
+        <p class="section-intro">
+          A selection of the skills and tools I use in my work and projects.
+        </p>
+
+        <div class="skill-group">
+          <h3>Web Development and Programming</h3>
+          <div class="tags">
+            <span class="tag highlight">HTML</span>
+            <span class="tag highlight">CSS</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
         </div>
 
-        <div class="skills-wrap">
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">Python</span>
-          <span class="skill">SQLite</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">Virtual Assistance</span>
-          <span class="skill">Online Research</span>
-          <span class="skill">Data Entry</span>
-          <span class="skill">Document Formatting</span>
-          <span class="skill">Social Media Content</span>
-          <span class="skill">Content Planning</span>
-          <span class="skill">Digital Marketing</span>
-          <span class="skill">Canva</span>
-          <span class="skill">AI Tools</span>
-          <span class="skill">Brand Communication</span>
+        <div class="skill-group">
+          <h3>Virtual Assistance</h3>
+          <div class="tags">
+            <span class="tag highlight">Online Research</span>
+            <span class="tag highlight">Data Entry</span>
+            <span class="tag">Information Organization</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Digital Marketing and Business Communication</h3>
+          <div class="tags">
+            <span class="tag highlight">Facebook Promotion</span>
+            <span class="tag highlight">WhatsApp Business Communication</span>
+            <span class="tag highlight">Canva</span>
+            <span class="tag">Product Presentation</span>
+            <span class="tag">Social Media Promotion</span>
+            <span class="tag">Customer Communication</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <div class="section-heading">
-          <div class="kicker">Selected work</div>
-          <h2 class="section-title">Projects and ideas in progress.</h2>
-          <p>
-            Explore some of my project areas. I'll add repository links,
-            screenshots, and live demos when they are available.
-          </p>
-        </div>
+        <h2 class="section-heading">Selected <span>Work</span></h2>
 
-        <div class="cards">
-          <article class="project-card">
-            <div class="project-tag">Web application</div>
+        <p class="section-intro">
+          Personal projects and business activities that demonstrate my
+          developing skills in technology, organization, and promotion.
+        </p>
+
+        <div class="card-grid">
+          <!-- PROJECT 1 -->
+          <article class="card project-card">
+            <div class="project-type">Software Development</div>
             <h3>Online Certificate Verification System</h3>
+            <span class="status">In Progress</span>
+
             <p>
-              A web application project focused on certificate submissions
-              and a verification workflow for authorized officers.
+              A Python and SQLite project focused on online certificate
+              submission and verification. The planned workflow includes
+              certificate uploads, verification-officer review, and
+              verification-status updates.
             </p>
-            <a class="project-link" href="#contact">Ask about this project ↗</a>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQLite</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://github.com/Horlajumm" target="_blank"
+                 rel="noopener noreferrer">GitHub Profile ↗</a>
+            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-tag">Small business</div>
-            <h3>Zesty Ponmo &amp; Tinko Hub</h3>
-            <p>
-              A small business project involving product presentation,
-              promotional content, pricing information, and customer communication.
-            </p>
-            <a class="project-link" href="#contact">Ask about this project ↗</a>
-          </article>
-
-          <article class="project-card">
-            <div class="project-tag">Portfolio</div>
+          <!-- PROJECT 2 -->
+          <article class="card project-card">
+            <div class="project-type">Web Development</div>
             <h3>Personal Portfolio Website</h3>
+
             <p>
-              This responsive website presents my skills, projects, and
-              professional interests in one place.
+              A published website that presents my profile, skills, projects,
+              and contact information in a responsive layout.
             </p>
-            <a class="project-link" href="#home">You're viewing it ↗</a>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://horlajumm.github.io/horla-portfolio/"
+                 target="_blank" rel="noopener noreferrer">View Website ↗</a>
+              <a href="https://github.com/Horlajumm/horla-portfolio"
+                 target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="card project-card">
+            <div class="project-type">Digital Marketing &amp; Business</div>
+            <h3>Zesty Ponmo &amp; Tinko Hub</h3>
+
+            <p>
+              My small-business project focused on promoting ponmo and tinko
+              products, presenting product and pricing information, and
+              communicating with prospective customers.
+            </p>
+
+            <ul>
+              <li>Facebook product promotion.</li>
+              <li>WhatsApp business communication.</li>
+              <li>Product presentation and promotional materials using Canva.</li>
+              <li>Sharing product, pricing, and delivery information.</li>
+            </ul>
+
+            <div class="tags">
+              <span class="tag">Facebook</span>
+              <span class="tag">WhatsApp</span>
+              <span class="tag">Canva</span>
+            </div>
+
+            <div class="project-links">
+              <a href="https://wa.me/2349037465115"
+                 target="_blank" rel="noopener noreferrer">WhatsApp Business ↗</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- CV -->
+    <section id="cv">
       <div class="container">
-        <div class="contact-panel">
-          <div>
-            <div class="kicker">Let's connect</div>
-            <h2 class="section-title">Have a project or opportunity in mind?</h2>
-            <p>
-              I'd be glad to connect about digital projects, virtual support,
-              web development, content, or collaboration. Send me an email
-              and let's discuss how we can work together.
-            </p>
-            <p>
-              <strong>Email:</strong>
-              <a href="mailto:adebisijumoke1@gmail.com">
-                adebisijumoke1@gmail.com
-              </a>
-            </p>
+        <div class="contact-box">
+          <h2 class="section-heading">My <span>CV</span></h2>
+
+          <p>
+            Interested in working with me? Download my CV to learn more
+            about my education, skills, and practical projects.
+          </p>
+
+          <div class="buttons">
+            <a
+              class="btn"
+              href="Adebisi_Jumoke_Zainab_Digital_Marketing_CV.pdf"
+              download
+            >Download My CV (PDF)</a>
           </div>
 
-          <a
-            class="btn"
-            href="mailto:adebisijumoke1@gmail.com?subject=Portfolio%20Enquiry">
-            Email Me ↗
-          </a>
+          <p>
+            The CV link will work after the PDF file has been uploaded
+            to this website's GitHub repository.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-heading">Let's <span>Connect</span></h2>
+
+          <p>
+            I'm open to opportunities in virtual assistance, junior web
+            development, and digital marketing. Feel free to reach out
+            about suitable roles or collaborations.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:adebisijumoke1@gmail.com">Email Me ↗</a>
+
+            <a href="https://github.com/Horlajumm"
+               target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+            <a href="https://wa.me/2349037465115"
+               target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> HorlaJumm. Built with care.</span>
-
-      <div class="social-links">
-        <a
-          href="https://github.com/Horlajumm"
-          target="_blank"
-          rel="noopener noreferrer">GitHub</a>
-        <a href="#home">Back to top ↑</a>
-      </div>
+    <div class="container">
+      <p>
+        © <span id="year"></span> HorlaJumm. All rights reserved.
+      </p>
+      <a class="back-top" href="#home">Back to top ↑</a>
     </div>
   </footer>
 
@@ -826,15 +775,23 @@
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", function () {
       const isOpen = navLinks.classList.toggle("open");
+
       menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
     });
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
+    document.querySelectorAll("#navLinks a").forEach(function (link) {
+      link.addEventListener("click", function () {
         navLinks.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
       });
     });
 
