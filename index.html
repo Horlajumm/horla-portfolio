@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HorlaJumm's professional portfolio">
+  <title>HorlaJumm | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #5b4bdb;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172033;
+    }
+
+    nav a:hover {
+      color: #5b4bdb;
+    }
+
+    .hero {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #eeecff, #f7f8fc);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.15;
+      margin: 20px 0;
+    }
+
+    .hero h1 span {
+      color: #5b4bdb;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #667085;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #5b4bdb;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 22px 10px 0 0;
+    }
+
+    .button:hover {
+      background: #4335b8;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      color: #667085;
+      margin-bottom: 30px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      color: #5b4bdb;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #667085;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: white;
+      border: 1px solid #ddd9ff;
+      border-radius: 8px;
+      padding: 10px 16px;
+    }
+
+    .contact {
+      background: #252052;
+      color: white;
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .contact p {
+      color: #d7d5f4;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #667085;
+      background: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 750px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .contact {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <div class="logo">HorlaJumm.</div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p>WELCOME TO MY PORTFOLIO</p>
+
+        <h1>
+          Creative thinking.<br>
+          <span>Practical solutions.</span>
+        </h1>
+
+        <p>
+          Hi, I'm HorlaJumm, a multi-skilled digital professional
+          interested in virtual assistance, web development,
+          digital marketing, and creative content.
+          I enjoy turning ideas into useful digital experiences.
+        </p>
+
+        <a href="#projects" class="button">Explore My Work</a>
+        <a href="#contact" class="button">Contact Me</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <p class="intro">
+          I am passionate about technology, creativity,
+          organization, and helping people and businesses
+          achieve their goals through digital solutions.
+        </p>
+
+        <div class="card">
+          <h3>My Professional Journey</h3>
+          <p>
+            My interests include administrative support,
+            website development, online research, social media
+            content, and digital business promotion.
+            I believe in continuous learning, clear communication,
+            and delivering quality work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+
+        <p class="intro">
+          My areas of interest and digital services.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Virtual Assistance</h3>
+            <p>
+              Administrative support, data entry, online research,
+              document organization, and task coordination.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Web Development</h3>
+            <p>
+              Responsive websites using HTML and CSS,
+              with Python and SQLite for suitable projects.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>
+              Social media content planning, brand promotion,
+              audience engagement, and digital campaigns.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Content Creation</h3>
+            <p>
+              Creating digital content, promotional materials,
+              and visual ideas for online audiences.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Online Research</h3>
+            <p>
+              Gathering information, organizing findings,
+              and presenting information clearly.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Business Support</h3>
+            <p>
+              Supporting small businesses with product presentation,
+              customer communication, and online visibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+
+        <p class="intro">
+          My current skills and areas of development.
+        </p>
+
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">Python</span>
+          <span class="skill">SQLite</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Virtual Assistance</span>
+          <span class="skill">Data Entry</span>
+          <span class="skill">Online Research</span>
+          <span class="skill">Document Formatting</span>
+          <span class="skill">Social Media</span>
+          <span class="skill">Digital Marketing</span>
+          <span class="skill">Canva</span>
+          <span class="skill">AI Tools</span>
+          <span class="skill">Content Planning</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+
+        <p class="intro">
+          Selected projects and digital work.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Certificate Verification System</h3>
+            <p>
+              A web application project designed to support
+              certificate submission and verification workflows.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Zesty Ponmo & Tinko Hub</h3>
+            <p>
+              A small business project involving product
+              presentation, promotional content, and customer
+              communication.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>
+              This website showcases my professional interests,
+              skills, projects, and digital services in one place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <h2>Let's Work Together</h2>
+
+          <p>
+            Have a project, collaboration, or opportunity in mind?
+            I'd love to hear from you.
+          </p>
+
+          <!-- Replace this email with your real email address -->
+          <a
+            href="mailto:your.email@example.com"
+            class="button"
+            style="background: white; color: #4335b8;"
+          >
+            Send Me an Email
+          </a>
+
+          <p>
+            <a
+              href="https://github.com/Horlajumm"
+              style="color: white;"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit My GitHub Profile
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> HorlaJumm.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
